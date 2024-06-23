@@ -1,3 +1,5 @@
+// Designed and implemented by Naim
+
 let generatedOTP;
 let otpContainer;
 let intervalID;
