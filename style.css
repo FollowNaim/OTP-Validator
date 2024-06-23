@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d0f14;
+  color: antiquewhite;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#result.success {
+  padding: 8px 10px;
+  border: 1px solid green;
+  color: rgb(4, 236, 4);
+}
+#result.failed {
+  padding: 8px 10px;
+  border: 1px solid rgb(130, 5, 5);
+  color: red;
+}
+.box {
+  --mask: radial-gradient(34.99px at 50% 48px, #000 99%, #0000 101%)
+      calc(50% - 60px) 0/120px 100%,
+    radial-gradient(34.99px at 50% -18px, #0000 99%, #000 101%) 50% 30px/120px
+      100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}

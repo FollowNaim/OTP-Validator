@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main
+      class="container flex flex-col gap-2 justify-center items-center max-w-xl mx-auto py-8"
+    >
+      <h1 class="text-2xl my-8">OTP Validation</h1>
+      <div
+        class="flex gap-4 justify-center items-center mb-8"
+        id="otp-box-container"
+      >
+        <input
+          class="w-12 rounded-md px-2 py-3 text-black text-2xl font-bold text-center"
+          type="text"
+          id="otp-box"
+          maxlength="1"
+        />
+        <input
+          class="w-12 rounded-md px-2 py-3 text-black text-2xl font-bold text-center"
+          type="text"
+          id="otp-box"
+          maxlength="1"
+        />
+        <input
+          class="w-12 rounded-md px-2 py-3 text-black text-2xl font-bold text-center"
+          type="text"
+          id="otp-box"
+          maxlength="1"
+        />
+        <input
+          class="w-12 rounded-md px-2 py-3 text-black text-2xl font-bold text-center"
+          type="text"
+          id="otp-box"
+          maxlength="1"
+        />
+      </div>
+      <p class="text-2xl font-semibold tracking-wider" id="generated-otp">
+        Generating OTP ...
+      </p>
+      <p id="result"></p>
+      <p id="" class="my-4 text-xl text-red-300">
+        Your OTP will expire in
+        <span id="timer" class="text-red-700"></span> seconds
+      </p>
+      <button
+        id="regenerate-otp"
+        class="px-6 py-3 border border-yellow-200 rounded-3xl"
+      >
+        Regenerate OTP
+      </button>
+    </main>
+    <div
+      class="bg-skew absolute w-2/4 h-[100vh] bg-blue-950 opacity-30 top-0 -right-10 -z-10"
+    ></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
