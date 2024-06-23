@@ -42,17 +42,17 @@
           maxlength="1"
         />
       </div>
-      <p class="text-2xl font-semibold tracking-wider" id="generated-otp">
-        Generating OTP ...
+      <p class="text-2xl font-semibold tracking-wider">
+        Your OTP is : <span class="text-green-500" id="generated-otp"></span>
       </p>
       <p id="result"></p>
       <p id="" class="my-4 text-xl text-red-300">
         Your OTP will expire in
-        <span id="timer" class="text-red-700"></span> seconds
+        <span id="timer" class="text-red-600 text-2xl font-bold"></span> seconds
       </p>
       <button
         id="regenerate-otp"
-        class="px-6 py-3 border border-yellow-200 rounded-3xl"
+        class="px-6 py-3 border border-yellow-200 rounded-3xl hover:scale-105 hover:border-green-500 transition-all duration-300"
       >
         Regenerate OTP
       </button>

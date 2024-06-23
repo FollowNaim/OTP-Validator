@@ -5,7 +5,7 @@ let otpContainer;
 let intervalID;
 let timeoutID;
 let timer;
-let result;
+let result = document.getElementById("result");
 let isValidate;
 const regenerateOTP = document.getElementById("regenerate-otp");
 
@@ -54,10 +54,11 @@ function handleBackspace(e) {
 
 function generateOTP() {
   clearInterval(intervalID);
+  clearTimeout(timeoutID);
   const generateOtp = document.getElementById("generated-otp");
   generatedOTP = Math.floor(1000 + Math.random() * 9000);
   console.log(generatedOTP);
-  generateOtp.textContent = `Your OTP is : ${generatedOTP}`;
+  generateOtp.textContent = generatedOTP;
   clearInputs();
   expireTimer();
 }
@@ -70,21 +71,19 @@ function validateOtp() {
   });
   console.log(typedValues);
   if (generatedOTP === parseInt(typedValues, 10)) {
-    result = document.getElementById("result");
+    result.style.display = "block";
     result.textContent = "OTP Validated succesfully";
     result.classList.remove("failed");
     result.classList.add("success");
-    result.style.display = "block";
     clearInterval(intervalID);
     clearTimeout(timeoutID);
     timer.parentNode.style.display = "none";
     console.log(timer.parentNode);
   } else {
-    result = document.getElementById("result");
+    result.style.display = "block";
     result.textContent = "OTP Invalid";
     result.classList.remove("success");
     result.classList.add("failed");
-    result.style.display = "block";
     isValidate = false;
     clearInputs();
     children[0].focus();
@@ -103,10 +102,11 @@ function expireTimer() {
   timeoutID = setTimeout(() => {
     clearInterval(intervalID);
     generateOTP();
-  }, maxTime);
+  }, maxTime + intervalTime);
 }
 
-regenerateOTP.addEventListener("click", () => {
+regenerateOTP.addEventListener("click", (e) => {
+  e.preventDefault();
   generateOTP();
   result.style.display = "none";
   timer.parentNode.style.display = "block";
